@@ -1,1 +1,8 @@
 <p>Olá mundo</p>
+
+<h1>{{ title }}</h1>
+<button [disabled]="isDesabilitar" (click)="onClick()">Clique aqui</button>
+<h1>{{ count() }}</h1>
+<button (click)="incrementar()">+</button>
+<button (click)="decrementar()">-</button>
+<button (click)="resetar()">Resetar</button>
