@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { ProductsCard } from '../products-card/products-card';
+import { Products } from '../products';
 
 @Component({
   selector: 'app-products-grid',
@@ -7,4 +8,6 @@ import { ProductsCard } from '../products-card/products-card';
   templateUrl: './products-grid.html',
   styleUrl: './products-grid.scss',
 })
-export class ProductsGrid {}
+export class ProductsGrid {
+  protected readonly products = signal<Products>
+}
