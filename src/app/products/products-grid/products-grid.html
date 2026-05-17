@@ -1,8 +1,25 @@
-<div class="grid">
-  <app-products-card></app-products-card>
-  <app-products-card></app-products-card>
-  <app-products-card></app-products-card>
-  <app-products-card></app-products-card>
-  <app-products-card></app-products-card>
-  <app-products-card></app-products-card>
+<div class="products-container">
+  <p>Total de produtos: {{ products().length }}</p>
+
+  <div class="products-grid">
+    @for (product of products(); track product.id) {
+      <app-products-card/>
+    } @empty {
+      <div>
+        <mat-icon>inventory_2</mat-icon>
+        <h3>Sem produtos</h3>
+        <p>Voltei depois</p>
+      </div>
+    }
+  </div>
 </div>
+<!-- jeito legado
+
+<div class="products-container">
+  <div class="products-grid" *ngFor="let product of products(); trackBy: product.id">
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.description }}</p>
+  </div>
+</div>
+
+-->
